@@ -30,3 +30,9 @@ def mergesort(alist):
 	right = mergesort(alist[middle:])
 
 	return merge(left, right)
+
+
+if __name__ == "__main__":
+    x = [9, 8, 5, 2, 3, 1, 4, 0, 7, 6]
+    assert mergesort(x) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print('test is exeecuted successfully!')
