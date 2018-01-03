@@ -21,6 +21,7 @@ def merge(left, right):
 
 	return result
 
+
 def mergesort(alist):
 	if len(alist) < 2:
 		return alist
