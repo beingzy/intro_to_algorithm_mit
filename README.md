@@ -10,3 +10,15 @@ popular algorithm which were taught in this course, Introduction to Algorithm
 * [Bittiger Leetcode Matarial](http://community.bittiger.io/uploads/files/1470965974311-cleancodehandbook_v1.0.1.pdf)
 
 * [GeeksforGeeks](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
+
+
+### Basic Structure
+   * queue (FIFO)
+      * can be implemented as `list`
+      * in: `.insert(0, val)`
+      * out: `.pop()`
+
+  * stack (LIFO)
+      * can be implemented as `list`
+      * in: `.append(val)`
+      * out: `.pop()`
