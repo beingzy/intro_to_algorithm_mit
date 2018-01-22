@@ -1,4 +1,15 @@
 """traversal of Graph: Depth First Search (DFS)
+
+   [application](https://www.geeksforgeeks.org/?p=11644):
+   * for an unweighted graph, DFS traversal of the graph produces the minimum
+     spanning tree and all pair shortest path tree.
+   * Path finding
+   * topologil sorting
+   * to test if a graph is bipartite
+   * finding strongly connected components
+   * solving puzzles with only one solution
+
+   complexity:
 """
 from collections import defaultdict
 
@@ -29,7 +40,7 @@ class Graph:
         for i in V:
             if visited[i] == False:
                 self.DFSUtil(i, visited)
-                
+
 
 if __name__ == "__main__":
     g = Graph()
