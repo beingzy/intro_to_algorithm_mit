@@ -58,6 +58,30 @@ class Graph:
                     frontier.append(i)
                     visited[i] = True
 
+    def topological_sort_util(self, v, visited, stack):
+        """recursive method for implementing topological sorting
+        """
+        visited[v] = True
+
+        for i in self.graph[v]:
+            if visited[i] == False:
+                self.topological_sort_util(i, visited, stack)
+
+        stack.insert(0, v)
+
+    def topological_sort(self):
+        """topological sorting [link](https://goo.gl/Levz6s)
+        """
+        V = list(self.graph.keys())
+        visited = dict(zip(V, [False] * len(V)))
+        stack = []
+
+        for v in V:
+            if visited[v] == False:
+                self.topological_sort_util(v, visited, stack)
+
+        print(stack)
+
 
 if __name__ == "__main__":
     g = Graph()
@@ -67,7 +91,6 @@ if __name__ == "__main__":
     g.addEdge(2, 0)
     g.addEdge(2, 3)
     g.addEdge(3, 3)
-
     print("Following is DFS from (starting from vertex 2)")
     g.DFS(2)
 
@@ -80,3 +103,14 @@ if __name__ == "__main__":
     g.addEdge(3, 3)
     print("Following is BFS traversal (starting from vertex 2)")
     g.BFS(2)
+
+    # test case for topological sorting
+    g = Graph()
+    g.addEdge(5, 2)
+    g.addEdge(5, 0)
+    g.addEdge(4, 0)
+    g.addEdge(4, 1)
+    g.addEdge(2, 3)
+    g.addEdge(3, 1)
+    print("Following is a Topological Sort of the given graph")
+    g.topological_sort()
