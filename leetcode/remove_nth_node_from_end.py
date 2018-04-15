@@ -38,9 +38,9 @@ def remove_nth_from_end(head, n):
 
     if n == 1:
         behind_n.next = None
-    else:
-        behind_n.next = behind_n.next.next
+        return head
 
+    behind_n.next = behind_n.next.next
     return head
 
 
