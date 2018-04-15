@@ -37,11 +37,11 @@ def find_median_of_two_sorted(x, y):
     seq = merge_two_sorted(x, y)
     n = len(seq)
     if n % 2 == 1:
-        med_idx = int((n+1)/2)
+        med_idx = int((n+1)/2) - 1
         return seq[med_idx]
     else:
-        left_idx = int(n/2)
-        right_idx = left_idx + 1
+        right_idx = int(n/2)
+        left_idx = right_idx - 1
         return (seq[left_idx] + seq[right_idx]) / 2.0
 
 
